@@ -1,0 +1,13 @@
+sql-etl-monitoring-framework/
+├── SQL/
+│   ├── create_etl_tables.sql
+│   ├── etl_load_script.sql
+│   ├── monitor_jobs.sql
+├── Python/
+│   └── send_email_alert.py
+├── Logs/
+│   └── sample_etl_log.csv
+├── screenshots/
+│   └── monitoring_ui.png
+├── README.md
+└── .gitignore
