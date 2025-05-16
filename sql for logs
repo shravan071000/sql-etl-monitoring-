@@ -1,0 +1,19 @@
+BEGIN TRY
+    INSERT INTO ETLJobStatus (JobName, StartTime, Status)
+    VALUES ('Load_Claims_Data', GETDATE(), 'Started');
+
+    -- Simulate ETL logic
+    -- INSERT INTO FactClaim (...) SELECT ... FROM StagingClaims
+
+    -- Mark as success
+    UPDATE ETLJobStatus
+    SET EndTime = GETDATE(), Status = 'Success'
+    WHERE JobName = 'Load_Claims_Data' AND Status = 'Started';
+
+END TRY
+BEGIN CATCH
+    DECLARE @ErrorMessage NVARCHAR(MAX) = ERROR_MESSAGE();
+    UPDATE ETLJobStatus
+    SET EndTime = GETDATE(), Status = 'Failed', ErrorMessage = @ErrorMessage
+    WHERE JobName = 'Load_Claims_Data' AND Status = 'Started';
+END CATCH
