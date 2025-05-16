@@ -1,0 +1,8 @@
+CREATE TABLE ETLJobStatus (
+    JobID INT PRIMARY KEY IDENTITY(1,1),
+    JobName VARCHAR(100),
+    StartTime DATETIME,
+    EndTime DATETIME,
+    Status VARCHAR(20),
+    ErrorMessage VARCHAR(MAX)
+);
