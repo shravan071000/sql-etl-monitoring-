@@ -1,0 +1,4 @@
+git remote add origin https://github.com/YOUR_USERNAME/sql-etl-monitoring-framework.git
+git add .
+git commit -m "Initial commit: Automated ETL + alerting system"
+git push -u origin master
