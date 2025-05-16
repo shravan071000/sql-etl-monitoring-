@@ -1,0 +1,3 @@
+SELECT * 
+FROM ETLJobStatus
+WHERE Status = 'Failed' AND StartTime >= DATEADD(HOUR, -24, GETDATE());
