@@ -1,0 +1,3 @@
+mkdir sql-etl-monitoring-framework
+cd sql-etl-monitoring-framework
+git init
